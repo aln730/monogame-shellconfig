@@ -33,6 +33,12 @@ pkgs.mkShell {
     #failsafe
     export LIBGL_ALWAYS_INDIRECT=1
 
+    # this is cursed asf ik
+    mkdir -p .lib-scripts
+    ln -sf ${pkgs.freetype}/lib/libfreetype.so .lib-scripts/libfreetype6.so
+    ln -sf ${pkgs.libpng}/lib/libpng16.so .lib-scripts/libpng16.so
+    export LD_LIBRARY_PATH="$(pwd)/.lib-scripts:$LD_LIBRARY_PATH"
+
     echo "environment loaded!"
   '';
 }
