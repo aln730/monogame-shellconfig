@@ -1,7 +1,17 @@
-WORKAROUND SHELL FOR RUNNING MONOGAME GAMES ON NIXOS...
+**WORKAROUND SHELL FOR RUNNING MONOGAME GAMES ON NIXOS**
 
-STUFF I DID OUTSIDE shell.nix
-- install freetype and libpng
-- enabled nix-ld for dynamic linking of non-nix stuff. (`programs.nix-ld.enable = true;`)
+This repository provides a minimal `shell.nix` setup to get **MonoGame projects running on NixOS**.
 
-TESTED ON NIX-25.11 KDE PLASMA (X11)
+**STUFF I DID OUTSIDE `shell.nix`**
+
+* Installed `freetype` and `libpng` system-wide
+* Enabled `nix-ld` for dynamic linking of non-Nix binaries
+
+  ```
+  programs.nix-ld.enable = true;
+  ```
+
+**TESTED ON**
+
+* NixOS 25.11
+* KDE Plasma (X11)
